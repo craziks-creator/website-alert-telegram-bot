@@ -35,19 +35,19 @@ import subprocess
 def get_mod(client: Client):
     req_result = request_time(Client)
     if req_result[0] == 404:
-        mes2 = "[{}]: DTU Website has not been Updated.\nLast Notice - \n{}".format(
+        mes2 = "[{}]: SSC Website has not been Updated.\nLast Notice - \n{}".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"), req_result[1]
         )
-        logging.info("[*] DTU Website has not been Updated.")
+        logging.info("[*] SSC Website has not been Updated.")
         with open("bot/plugins/check.txt", "w+") as f:
             f.write(mes2)
             f.close()
     elif req_result[0] == 403:
         sendtelegram(2, AUTH_CHANNEL, "_", "Request Timed Out.")
-        mes2 = "[{}]: DTU Website has not been Updated.".format(
+        mes2 = "[{}]: SSC Website has not been Updated.".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     elif req_result[0] == 200:
-        mes2 = "[{}]: DTU Website has not been Updated.\nLast Notice - \n{}".format(
+        mes2 = "[{}]: SSC Website has not been Updated.\nLast Notice - \n{}".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"), req_result[1]
         )
         t1 = threading.Thread(target=broadcast, args=(req_result,))
@@ -161,7 +161,7 @@ def broadcast(req_result):
     failed_users = []
     for i in range(0, (total)):
         try:
-            pp = "[{}]: DTU Site has been Updated!\n\nLatest Notice Title - \n{}\n\nUnder Tab --> {}\n\nCheers from @DTUAlertBot!".format(
+            pp = "[{}]: SSC Site has been Updated!\n\nLatest Notice Title - \n{}\n\nUnder Tab --> {}\n\nCheers from ssc unofficial bot!".format(
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 req_result[3],
                 req_result[5],
