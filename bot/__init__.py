@@ -48,10 +48,10 @@ START_COMMAND = get_env("START_COMMAND", "start")
 START_OTHER_USERS_TEXT = get_env(
     "START_OTHER_USERS_TEXT",
     (
-        "👋 Hey! Welcome to <i>DTU Alert Bot</i>.\n\n"
-        "🔔 You are <b>subscribed for notifications</b>. In case of any new notice on DTU Website, you'll recieve an alert and the notice here itself. <i>Send</i> /help <i>for more info.</i>\n\n"
+        "👋 Hey! Welcome to <i>ssc Alert Bot</i>.\n\n"
+        "🔔 You are <b>subscribed for notifications</b>. In case of any new notice on ssc Website, you'll recieve an alert and the notice here itself. <i>Send</i> /help <i>for more info.</i>\n\n"
         "⚠️ Please make sure the bot is <b>unmuted</b> and notifications are allowed for the app.\n\n"
-        "😄 This bot was developed and hosted by <b>Prince Mendiratta</b> (@anubisxx). This is an open source project available on https://bit.ly/32snhEw. Please <i>star and fork</i> the repo if you liked the bot!\n\n"
+        "😄 This bot was developed and hosted by <b>your vro</b> (@anubisxx). This is an open source project available on github. Please <i>star and fork</i> the repo if you find it !\n\n"
         "🔱 <b>Last check status-</b>\n{}"
     ),
 )
@@ -59,7 +59,6 @@ START_OTHER_USERS_TEXT = get_env(
 HELP_MEHH = get_env(
     "HELP_MEHH",
     (
-        "⭕️ This project had been developed as a personal utility bot, which was later modified to be used by all and then submitted as part of <i>Innovative Project Work</i>, whose report can be found on <a href='https://github.com/Prince-Mendiratta/DTU-Alert-Bot/blob/master/Project_Report.pdf'>Github</a>.\n\n"
         "😲 This bot creates a full record of the notices on the website and cross-checks with previous records to determine if the site has been updated and <b>instantly</b> sends you a notification to alert you.\n\n"
         "⚠️ <b>Please unmute the bot and allow notifications for the app.</b>\n"
         "Send /status to check if the alerts work properly!\n\n"
@@ -80,13 +79,10 @@ ONLINE_CHECK_START_TEXT = get_env(
 CREATOR = get_env(
     'CREATOR',
     (
-        "🌀 Hello, this bot has been developed and maintained by <b>Prince Mendiratta</b>, a sophomore at <i>Delhi Technological University</i>.\n\n"
-        "♣️ A zestful learner with an upcoming Bachelors Degree in <i>Computer Engineering</i>, being particularly adept at working with Python, NodeJS, JavaScript, C++ , full stack web development, I love automating things.\n\n"
-        "💠 Do bots fascinate you as well? Check out my recent project, <a href='https://mybotsapp.com'>BotsApp</a>, where you can create your <b>personal userbot on WhatsApp</b>, absolutely free of cost and with <i>zero technical knowledge</i> required!\n\n"
-        "⭕️ Want to get premium apps for free? Check out my <a href='https://t.me/allapkforfree'>Telegram Channel</a> and <a href='https://moddingunited.xyz'>website</a>, dedicated to providing <b>safe and trusted modded application</b>, used by tens of thousands of people daily! \n\n"
-        "🔅 Have any suggestions / feedback / complaints or just wanna hangout? Don't hesitate to <b>reach out</b> to me on any of these platforms.\n"
-        "🔗 <a href='https://t.me/anubisxx'>Telegram</a> | <a href='https://www.linkedin.com/in/prince-mendiratta'>LinkedIn</a> | <a href='https://api.whatsapp.com/send/?phone=%2B917838204238&text=Hello+There!&app_absent=0'>WhatsApp</a> | <a href='https://github.com/Prince-Mendiratta'>Github</a>"
-    )
+        "🌀 Hello, this bot has been developed and maintained by <b>your vro</b>, a engineer now a <i> government job aspirant</i>.\n\n"
+        "♣️ A zestful learner with a Bachelors Degree in <i>electrical and electrics Engineering</i>, being particularly adept at working with Python, NodeJS, JavaScript, C++ , full stack web development, I love automating things.\n\n"
+        "🔅 Have any suggestions / feedback / complaints or just wanna hangout? Don't hesitate to <b>reach out</b> to me on any of these platforms but I must unable to reply to you because I have quant mock.\n"
+        )
 )
 # Interval between each check
 REQUEST_INTERVAL = get_env("REQUEST_INTERVAL", 20)
