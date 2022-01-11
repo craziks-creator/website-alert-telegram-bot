@@ -148,7 +148,7 @@ def notice_link(x, i, tree):
         return link
     except Exception as e:
         print(e)
-        return "https://ssc.nic.in/SSCFileServer/PortalManagement/UploadedFiles/Write-up_(SI-CPO-20)_Paper-II_06012022_2.pdf"
+        return "https://ssc.nic.in/Portal/LatestNewsnic.in/SSCFileServer/PortalManagement/UploadedFiles/Write-up_(SI-CPO-20)_Paper-II_06012022_2.pdf"
 
 
 def dict_compare(d1, d2):
