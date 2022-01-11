@@ -40,9 +40,9 @@ import base64
 import json
 
 def request_time(client: Client):
-    print("[*] Checking DTU Website for notices now....")
+    print("[*] Checking SSC Website for notices now....")
     try:
-        r = requests.get(('http://dtu.ac.in/'), timeout=25)
+        r = requests.get(('https://ssc.nic.in/Portal/Notices'), timeout=25)
     except Timeout:
         print("[{}]: The request timed out.".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
