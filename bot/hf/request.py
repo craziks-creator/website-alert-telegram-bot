@@ -57,7 +57,7 @@ def request_time(client: Client):
     except IndexError:
         try:
             top_noticee = tree.xpath(
-                '//*[@id="forScrollNews"]/ul/li[1]/p/a/font/text()')
+                '//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/font/text()')
             top_notice = top_noticee[0]
         except Exception as e:
             logging.error(e)
@@ -65,7 +65,7 @@ def request_time(client: Client):
     try:
         top_link = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/@href')[0]
         top_link = top_link.split('.', 1)[1]
-        top_link = 'ssc.nic.in/Portal/Notices' + top_link
+        top_link = 'ssc.nic.in/Portal/LatestNews' + top_link
     except IndexError:
         top_link = ''
 
@@ -128,13 +128,13 @@ def request_time(client: Client):
 
 def notice_title(x, i, tree):
     try:
-        xpath = tree.xpath('//*[@id="forScrollNews"]/ul/li[1]/p/a/text()'.format(x,i))
+        xpath = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/text()'.format(x,i))
         return xpath[0]
         if top_notice == ' ':
             raise IndexError
     except IndexError:
         try:
-            notice = tree.xpath('//*[@id="forScrollNews"]/ul/li[1]/p/a/font/text()'.format(x,i))
+            notice = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/font/text()'.format(x,i))
             return notice[0]
         except Exception as e:
             print(e)
@@ -142,9 +142,9 @@ def notice_title(x, i, tree):
 
 def notice_link(x, i, tree):
     try:
-        link = tree.xpath('//*[@id="forScrollNews"]/ul/li[1]/p/a/@href'.format(x,i))[0]
+        link = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/@href'.format(x,i))[0]
         link = link.split('.', 1)[1]
-        link = 'http://dtu.ac.in' + link
+        link = 'https://ssc.nic.in/Portal/LatestNews' + link
         return link
     except Exception as e:
         print(e)
