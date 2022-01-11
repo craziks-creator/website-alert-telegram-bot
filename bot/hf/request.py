@@ -42,7 +42,7 @@ import json
 def request_time(client: Client):
     print("[*] Checking DTU Website for notices now....")
     try:
-        r = requests.get(('https://ssc.nic.in/Portal/Notices'), timeout=25)
+        r = requests.get(('https://ssc.nic.in/Portal/LatestNews'), timeout=25)
     except Timeout:
         print("[{}]: The request timed out.".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
@@ -51,19 +51,19 @@ def request_time(client: Client):
     tree = html.fromstring(r.content)
     try:
         top_notice = tree.xpath(
-            '//*[@id="noticescglid"]/div[1]/ul/li[1]/h6/a/text()')[0]
+            '//*[@id="forScrollNews"]/ul/li[1]/p/a/text()')[0]
         if top_notice == " ":
             raise IndexError
     except IndexError:
         try:
             top_noticee = tree.xpath(
-                '//*[@id="noticescglid"]/div[1]/ul/li[1]/h6/a/font/text()')
+                '//*[@id="forScrollNews"]/ul/li[1]/p/a/font/text()')
             top_notice = top_noticee[0]
         except Exception as e:
             logging.error(e)
             top_notice = "-Please check yourself-"
     try:
-        top_link = tree.xpath('//*[@id="noticescglid"]/div[1]/ul/li[1]/h6/a/@href')[0]
+        top_link = tree.xpath('//*[@id="forScrollNews"]/ul/li[1]/p/a/@href')[0]
         top_link = top_link.split('.', 1)[1]
         top_link = 'ssc.nic.in/Portal/Notices' + top_link
     except IndexError:
@@ -128,13 +128,13 @@ def request_time(client: Client):
 
 def notice_title(x, i, tree):
     try:
-        xpath = tree.xpath('//*[@id="tab{}"]/div[1]/ul/li[{}]/h6/a/text()'.format(x,i))
+        xpath = tree.xpath('//*[@id="forScrollNews"]/ul/li[1]/p/a/text()'.format(x,i))
         return xpath[0]
         if top_notice == ' ':
             raise IndexError
     except IndexError:
         try:
-            notice = tree.xpath('//*[@id="tab{}"]/div[1]/ul/li[{}]/h6/a/font/text()'.format(x,i))
+            notice = tree.xpath('//*[@id="forScrollNews"]/ul/li[1]/p/a/font/text()'.format(x,i))
             return notice[0]
         except Exception as e:
             print(e)
@@ -142,7 +142,7 @@ def notice_title(x, i, tree):
 
 def notice_link(x, i, tree):
     try:
-        link = tree.xpath('//*[@id="tab{}"]/div[1]/ul/li[{}]/h6/a/@href'.format(x,i))[0]
+        link = tree.xpath('//*[@id="forScrollNews"]/ul/li[1]/p/a/@href'.format(x,i))[0]
         link = link.split('.', 1)[1]
         link = 'http://dtu.ac.in' + link
         return link
