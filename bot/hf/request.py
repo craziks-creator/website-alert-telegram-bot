@@ -40,7 +40,7 @@ import base64
 import json
 
 def request_time(client: Client):
-    print("[*] Checking DTU Website for notices now....")
+    print("[*] Checking ssc Website for notices now....")
     try:
         r = requests.get(('https://ssc.nic.in/Portal/LatestNews'), timeout=25)
     except Timeout:
@@ -51,7 +51,7 @@ def request_time(client: Client):
     tree = html.fromstring(r.content)
     try:
         top_notice = tree.xpath(
-            '//*[@id="forScrollNews"]/ul/li[1]/p/a/text()')[0]
+            '//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/text()')[0]
         if top_notice == " ":
             raise IndexError
     except IndexError:
@@ -63,7 +63,7 @@ def request_time(client: Client):
             logging.error(e)
             top_notice = "-Please check yourself-"
     try:
-        top_link = tree.xpath('//*[@id="forScrollNews"]/ul/li[1]/p/a/@href')[0]
+        top_link = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/@href')[0]
         top_link = top_link.split('.', 1)[1]
         top_link = 'ssc.nic.in/Portal/Notices' + top_link
     except IndexError:
