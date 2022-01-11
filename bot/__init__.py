@@ -51,7 +51,7 @@ START_OTHER_USERS_TEXT = get_env(
         "👋 Hey! Welcome to <i>ssc Alert Bot</i>.\n\n"
         "🔔 You are <b>subscribed for notifications</b>. In case of any new notice on ssc Website, you'll recieve an alert and the notice here itself. <i>Send</i> /help <i>for more info.</i>\n\n"
         "⚠️ Please make sure the bot is <b>unmuted</b> and notifications are allowed for the app.\n\n"
-        "😄 This bot was developed and hosted by <b>your vro</b> (@anubisxx). This is an open source project available on github. Please <i>star and fork</i> the repo if you find it !\n\n"
+        "😄 This bot was developed and hosted by <b>your vro</b>. This is an open source project available on github. Please <i>star and fork</i> the repo if you find it !\n\n"
         "🔱 <b>Last check status-</b>\n{}"
     ),
 )
