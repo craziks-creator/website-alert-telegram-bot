@@ -68,7 +68,31 @@ def request_time(client: Client):
         top_link = 'ssc.nic.in/Portal/LatestNews' + top_link
     except IndexError:
         top_link = ''
-
+    tabs = [1]
+    tab_titles = ['Notices']
+    y = 0
+    records = {}
+    titles = []
+    for x in tabs:
+        tab = tab_titles[y]
+        for i in range(1,15):
+            try:
+                title = notice_title(x,i, tree)
+                link = notice_link(x, i, tree)
+                notice = {
+                    "title": title,
+                    "link": link,
+                    "tab": tab
+                }
+                if title != "":
+                    titles.append(notice)
+            except Exception as e:
+                print("No title - " + str(e))
+                pass
+        records[tab] = titles
+        titles = []
+        y+=1
+    
     
     previous_records = records
     if not path.exists("bot/hf/recorded_status.json"):
