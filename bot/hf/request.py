@@ -69,8 +69,8 @@ def request_time(client: Client):
     except IndexError:
         top_link = ''
 
-    tabs = [1,2,3,4,5]
-    tab_titles = ['Notices', 'Jobs', 'Tenders', 'Latest News', 'Forthcoming Events']
+    tabs = [1,2]
+    tab_titles = ['Notices','Latest News']
     y = 0
     records = {}
     titles = []
@@ -128,13 +128,13 @@ def request_time(client: Client):
 
 def notice_title(x, i, tree):
     try:
-        xpath = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[{}]/div/p/a/text()'.format(x,i))
+        xpath = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/text()')
         return xpath[0]
         if top_notice == ' ':
             raise IndexError
     except IndexError:
         try:
-            notice = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[{}]/div/p/a/font/text()'.format(x,i))
+            notice = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/font/text()')
             return notice[0]
         except Exception as e:
             print(e)
@@ -142,7 +142,7 @@ def notice_title(x, i, tree):
 
 def notice_link(x, i, tree):
     try:
-        link = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[{}]/div/p/a/@href'.format(x,i))[0]
+        link = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/@href')[0]
         link = link.split('.', 1)[1]
         link = 'https://ssc.nic.in/Portal/LatestNews' + link
         return link
