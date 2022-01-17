@@ -154,17 +154,17 @@ def check_status(user_id, usname):
 
 def broadcast(req_result):
     os.remove("bot/hf/recorded_status.json")
-    file_id = getDocId(req_result[4])
+    file_id = getDocId(req_result[2])
     broadcast_list = user_list()
     total = len(broadcast_list)
     failed = 0
     failed_users = []
     for i in range(0, (total)):
         try:
-            pp = "[{}]: SSC Site has been Updated!\n\nLatest Notice Title - \n{}\n\nUnder Tab --> {}\n\nCheers from ssc unofficial bot!".format(
+            pp = "[{}]: SSC Site has been Updated!\n\nLatest Notice Title - \n{}\n\nlink {}\n\nCheers from ssc unofficial bot!".format(
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                req_result[3],
-                req_result[5],
+                req_result[1],
+                req_result[2],
             )
             send_status = sendtelegram(1, broadcast_list[i], file_id, pp)
             if send_status == 200:
