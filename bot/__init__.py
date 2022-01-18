@@ -20,8 +20,6 @@ import logging
 from dotenv import load_dotenv
 from logging.handlers import RotatingFileHandler
 from bot.get_env import get_env
-from pymongo import MongoClient
-from bot import MONGO_URL
 
 load_dotenv("config.env")
 
