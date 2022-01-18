@@ -1,18 +1,18 @@
 {
-  "name": "DTU Alert Bot",
+  "name": "SSC Alert Bot",
   "description": "Modular Telegram Bot powered by @PyroGram!",
   "logo": "https://telegra.ph/file/488fd9b6cf60a08dbceb9.png",
   "keywords": [
     "telegram",
     "bot",
-    "DTU",
+    "SSC",
     "Notice",
     "Alert",
     "relay",
     "channel",
     "administrators"
   ],
-  "repository": "https://github.com/Prince-Mendiratta/DTU-Alert-Bot",
+  "repository": "https://github.com/craziks-creator/notofssc/",
   "env": {
     "API_ID": {
       "description": "Get this value from my.telegram.org!"
