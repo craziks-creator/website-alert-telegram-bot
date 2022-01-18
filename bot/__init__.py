@@ -20,6 +20,8 @@ import logging
 from dotenv import load_dotenv
 from logging.handlers import RotatingFileHandler
 from bot.get_env import get_env
+from pymongo import MongoClient
+from bot import MONGO_URL
 
 load_dotenv("config.env")
 
@@ -73,7 +75,7 @@ ONLINE_CHECK_START_TEXT = get_env(
         "👾 I am online, <b>master</b>\n\n"
         "<b>Current Users</b> - {}\n\n"
         "<b>Last check status</b> - \n{}"
-    ),
+    )
 )
 # creator text
 CREATOR = get_env(
