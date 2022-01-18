@@ -19,6 +19,9 @@ async def tu_ruk_baba_me_dekhta_na(_, message: Message):
 async def creator(_, message: Message):
     await message.reply_text(CREATOR, quote=True, disable_web_page_preview=True)
 
+@Client.on_message(filters.command("online", COMMM_AND_PRE_FIX))
+async def creator(_, message: Message):
+    await message.reply_text(ONLINE_CHECK_START_TEXT, quote=True, disable_web_page_preview=True)
 
 @Client.on_message(
     filters.command("logs", COMMM_AND_PRE_FIX) & filters.chat(AUTH_CHANNEL)
