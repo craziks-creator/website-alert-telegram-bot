@@ -144,7 +144,7 @@ def check_status(user_id, usname):
         2,
         user_id,
         "_",
-        "[*] Last Check - [{}]\nLast Notice - \n{}\nHave a Look! {}".format(
+        " Last Check - [{}]\nLast Notice - \n{}\nssc! {}".format(
             datetime.now().strftime(
                 "%Y-%m-%d %H:%M:%S"), req_result[1], req_result[2]
         ),
