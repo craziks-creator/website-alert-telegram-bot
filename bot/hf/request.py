@@ -65,7 +65,7 @@ def request_time(client: Client):
     try:
         top_link = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/@href')[0]
         top_link = top_link.split('.', 1)[1]
-        top_link = 'ssc.nic.in/Portal/LatestNews' + top_link
+        top_link = 'ssc.' + top_link
     except IndexError:
         top_link = ''
 
@@ -144,7 +144,7 @@ def notice_link(x, i, tree):
     try:
         link = tree.xpath('//div[@class="scrollingNotifications_New scrollbar"]/ul/li[1]/div/p/a/@href')[0]
         link = link.split('.', 1)[1]
-        link = 'https://ssc.nic.in/Portal/LatestNews' + link
+        link = 'https://ssc.' + link
         return link
     except Exception as e:
         print(e)
