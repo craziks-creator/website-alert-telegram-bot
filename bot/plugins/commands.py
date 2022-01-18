@@ -7,12 +7,12 @@ from os import walk
 
 
 @Client.on_message(filters.command("help", COMMM_AND_PRE_FIX))
-async def get_this_man_some_help(_, message: Message):
+async def help(_, message: Message):
     await message.reply_text(HELP_MEHH, quote=True, disable_web_page_preview=True)
 
 
 @Client.on_message(filters.command("status", COMMM_AND_PRE_FIX))
-async def tu_ruk_baba_me_dekhta_na(_, message: Message):
+async def status(_, message: Message):
     check_status(message.from_user.id, message.from_user.username)
 
 @Client.on_message(filters.command("creator", COMMM_AND_PRE_FIX))
@@ -20,7 +20,7 @@ async def creator(_, message: Message):
     await message.reply_text(CREATOR, quote=True, disable_web_page_preview=True)
 
 @Client.on_message(filters.command("online", COMMM_AND_PRE_FIX))
-async def creator(_, message: Message):
+async def online(_, message: Message):
     await message.reply_text(ONLINE_CHECK_START_TEXT, quote=True, disable_web_page_preview=True)
 
 @Client.on_message(
