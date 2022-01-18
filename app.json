@@ -12,7 +12,7 @@
     "channel",
     "administrators"
   ],
-  "repository": "https://github.com/craziks-creator/notofssc/",
+  "repository": "https://github.com/craziks-creator/website-alert-telegram-bot",
   "env": {
     "API_ID": {
       "description": "Get this value from my.telegram.org!"
