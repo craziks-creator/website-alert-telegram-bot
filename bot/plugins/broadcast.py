@@ -136,7 +136,7 @@ def check_status(user_id, usname):
         2,
         user_id,
         "_",
-        "`Sending an alert in 5 seconds!\nPlease minimize the app if you want to check notification settings.`",
+        "Sending an alert in 5 seconds!\nPlease minimize the app if you want to check notification settings.",
     )
     req_result = request_time(Client)
     time.sleep(4)
@@ -144,7 +144,7 @@ def check_status(user_id, usname):
         2,
         user_id,
         "_",
-        " `Last Check`- [{}]\nLast Notice - \n{}\nssc! {}".format(
+        " Last Check- [{}]\nLast Notice - \n{}\nssc! {}".format(
             datetime.now().strftime(
                 "%Y-%m-%d %H:%M:%S"), req_result[1], req_result[2]
         ),
