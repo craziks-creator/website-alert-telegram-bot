@@ -49,7 +49,7 @@ START_OTHER_USERS_TEXT = get_env(
     "START_OTHER_USERS_TEXT",
     (
         "👋 Hey! Welcome to <i>ssc Alert Bot</i>.\n\n"
-        "🔔 You are <b>subscribed for notifications</b>. In case of any new notice on ssc Website, you'll recieve an alert and the notice here itself. <i>Send</i> /help <i>for more info.</i>\n\n"
+        "🔔 You are <b>subscribed for SSC official notifications</b>. In case of any new notice on ssc Website, you'll recieve an alert and the notice here itself. <i>Send</i> /help <i>for more info.</i>\n\n"
         "⚠️ Please make sure the bot is <b>unmuted</b> and notifications are allowed for the app.\n\n"
         "😄 This bot was developed and hosted by <b>your vro</b>. This is an open source project available on github. Please <i>star and fork</i> the repo if you find it !\n\n"
         "🔱 <b>Last check status-</b>\n{}"
@@ -79,9 +79,9 @@ ONLINE_CHECK_START_TEXT = get_env(
 CREATOR = get_env(
     'CREATOR',
     (
-        "🌀 Hello, this bot has been developed and maintained by <b>your vro</b>, a engineer now a <i> government job aspirant</i>.\n\n"
+        "🌀 Hello, this bot has been developed and maintained by <b>your vro</b>, an engineer now a <i> government job aspirant</i>.\n\n"
         "♣️ A zestful learner with a Bachelors Degree in <i>electrical and electrics Engineering</i>, being particularly adept at working with Python, NodeJS, JavaScript, C++ , full stack web development, I love automating things.\n\n"
-        "🔅 Have any suggestions / feedback / complaints or just wanna hangout? Don't hesitate to <b>reach out</b> to me on any of these platforms but I must unable to reply to you because I have quant mock.\n"
+        "🔅 Have any suggestions / feedback / complaints or just wanna hangout? Don't hesitate to <b>reach out</b> to me on any of these platforms but I must unable to reply  you because I have quant mock.\n"
         )
 )
 # Interval between each check
