@@ -161,7 +161,7 @@ def broadcast(req_result):
     failed_users = []
     for i in range(0, (total)):
         try:
-            pp = "[{}]: SSC Site has been Updated!\n\nLatest Notice Title - \n{}\n\nlink {}\n\nCheers from ssc unofficial bot!".format(
+            pp = "[{}]: New notification from SSC website!\n{}\nlink {}".format(
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 req_result[1],
                 req_result[2],
