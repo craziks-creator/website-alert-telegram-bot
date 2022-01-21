@@ -42,6 +42,9 @@
       "description": "Specify timezone so that time realted functions work as needed. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc .Default is IST.",
       "value": "Asia/Kolkata",
       "required": false
+    },
+    "MY_CHANNEL": {
+      "description": "List down the channel IDs who should have permission to use bot, seperated by SPACE. To get user ids, send /id command to Telegram @OwnErObOT"
     }
   },
   "buildpacks": [
