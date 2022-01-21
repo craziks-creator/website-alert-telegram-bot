@@ -166,7 +166,7 @@ def broadcast(req_result):
                 req_result[1],
                 req_result[2],
             )
-            send_status = sendtelegram(1, broadcast_list[i], file_id, pp)
+            send_status = sendtelegram(1, MY_CHANNEL, file_id, pp)
             if send_status == 200:
                 i += 1
                 logging.info(
