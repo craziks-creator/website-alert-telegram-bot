@@ -31,6 +31,8 @@ API_ID = get_env("API_ID", should_prompt=True)
 TG_BOT_TOKEN = get_env("TG_BOT_TOKEN", should_prompt=True)
 # array to store the channel ID of the admin.
 AUTH_CHANNEL = int(get_env("AUTH_CHANNEL", "-100", should_prompt=True))
+#array to store the channel ID of the admin.
+MY_CHANNEL = int(get_env("MY_CHANNEL", "-100", should_prompt=True))
 # MongoDB Database for the bot to operate
 MONGO_URL = get_env("MONGO_URL", should_prompt=True)
 TG_BOT_WORKERS = int(get_env("TG_BOT_WORKERS", "4"))
