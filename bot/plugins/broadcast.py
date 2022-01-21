@@ -22,7 +22,7 @@ import requests
 import threading
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from bot import AUTH_CHANNEL, REQUEST_INTERVAL, TG_BOT_TOKEN, MONGO_URL
+from bot import AUTH_CHANNEL, REQUEST_INTERVAL, TG_BOT_TOKEN, MONGO_URL, MY_CHANNEL
 from os import path
 from bot.hf.request import request_time
 from bot.mongodb.users import user_list, remove_client_from_db
