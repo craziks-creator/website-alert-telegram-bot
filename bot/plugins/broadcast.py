@@ -100,6 +100,7 @@ def sendtelegram(tipe, user_id, notice, caption):
         pramas = {"chat_id": user_id, "document": notice, "caption": caption}
     elif tipe == 2:
         handler = "Message"
+        html = "html"
         pramas = {
             "chat_id": user_id,
             "text": caption,
