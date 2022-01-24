@@ -97,10 +97,11 @@ def getDocId(notice):
 def sendtelegram(tipe, user_id, notice, caption):
     if tipe == 1:
         handler = "Document"
-        pramas = {"chat_id": user_id, "document": notice, "caption": caption}
+        html = "html"
+        pramas = {"chat_id": user_id, "document": notice, "caption": caption, "parse_mode": html}
     elif tipe == 2:
         handler = "Message"
-        html = "html"
+        html = "markdown"
         pramas = {
             "chat_id": user_id,
             "text": caption,
@@ -146,7 +147,7 @@ def check_status(user_id, usname):
         2,
         user_id,
         "_",
-        "Last Check- [{}]\n<b>Last Notice:</b><code>{}</code>\n{}".format(
+        "||Last Check-|| [{}]\n*Last Notice:* ```{}```\n{}".format(
             datetime.now().strftime(
                 "%Y-%m-%d %H:%M:%S"), req_result[1], req_result[2]
         ),
@@ -163,7 +164,7 @@ def broadcast(req_result):
     failed_users = []
     for i in range(0, (total)):
         try:
-            pp = "[{}]:update from SSC website!{}\nlink {}".format(
+            pp = "[{}]:<b>Latest update from SSC website</b><code>{}</code>\n{}".format(
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 req_result[1],
                 req_result[2],
