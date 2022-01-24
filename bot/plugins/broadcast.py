@@ -144,7 +144,7 @@ def check_status(user_id, usname):
         2,
         user_id,
         "_",
-        " Last Check- [{}]\nLast Notice - \n{}\nssc! {}".format(
+        " Last Check- [{}]\n```Last Notice:{}```\n{}".format(
             datetime.now().strftime(
                 "%Y-%m-%d %H:%M:%S"), req_result[1], req_result[2]
         ),
@@ -161,7 +161,7 @@ def broadcast(req_result):
     failed_users = []
     for i in range(0, (total)):
         try:
-            pp = "[{}]: New notification from SSC website!\n{}\nlink {}".format(
+            pp = "[{}]:update from SSC website!{}\nlink {}".format(
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 req_result[1],
                 req_result[2],
