@@ -97,11 +97,11 @@ def getDocId(notice):
 def sendtelegram(tipe, user_id, notice, caption):
     if tipe == 1:
         handler = "Document"
-        html = "Markdown"
+        html = "html"
         pramas = {"chat_id": user_id, "document": notice, "caption": caption, "parse_mode": html}
     elif tipe == 2:
         handler = "Message"
-        html = "markdown"
+        html = "html"
         pramas = {
             "chat_id": user_id,
             "text": caption,
