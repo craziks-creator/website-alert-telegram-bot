@@ -103,6 +103,7 @@ def sendtelegram(tipe, user_id, notice, caption):
         pramas = {
             "chat_id": user_id,
             "text": caption,
+            "parse_mode": html,
         }
     elif tipe == 3:
         handler = "Animation"
@@ -144,7 +145,7 @@ def check_status(user_id, usname):
         2,
         user_id,
         "_",
-        " Last Check- [{}]\nLast Notice:{}\n{}".format(
+        " Last Check- [{}]\n<code>Last Notice:</code>{}\n{}".format(
             datetime.now().strftime(
                 "%Y-%m-%d %H:%M:%S"), req_result[1], req_result[2]
         ),
