@@ -43,7 +43,7 @@ def get_mod(client: Client):
             f.write(mes2)
             f.close()
     elif req_result[0] == 403:
-        sendtelegram(2, AUTH_CHANNEL, "_", "```Request Timed Out.```")
+        sendtelegram(2, AUTH_CHANNEL, "_", "<code>Request Timed Out,ssc server down or too busy...</code>")
         mes2 = "[{}]: SSC Website has not been Updated.".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     elif req_result[0] == 200:
@@ -147,7 +147,7 @@ def check_status(user_id, usname):
         2,
         user_id,
         "_",
-        "Last Check- [{}]\n*Last Notice:* ```{}```\n{}".format(
+        "Last Check- [{}]\n<b>Last Notice:</b> <code>{}</code>\n{}".format(
             datetime.now().strftime(
                 "%Y-%m-%d %H:%M:%S"), req_result[1], req_result[2]
         ),
@@ -164,7 +164,7 @@ def broadcast(req_result):
     failed_users = []
     for i in range(0, (total)):
         try:
-            pp = "[{}]:*Latest update from SSC website* ```{}```\n{}".format(
+            pp = "[{}]:<b>Latest update from SSC website</b><code>{}</code>\n{}".format(
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 req_result[1],
                 req_result[2],
