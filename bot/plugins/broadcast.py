@@ -110,7 +110,7 @@ def sendtelegram(tipe, user_id, notice, caption):
     try:
         token = TG_BOT_TOKEN
         r = requests.get(
-            "https://api.telegram.org/bot{}/send{};parse_mode=html".format(token, handler),
+            "https://api.telegram.org/bot{}/send{}".format(token, handler),
             params=pramas,
         )
         logging.info(r.status_code)
