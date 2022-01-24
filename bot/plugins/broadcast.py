@@ -3,7 +3,7 @@
 # (c) Prince Mendiratta
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
+# the Free Software Foundatier version 3 of the License, or
 # (at your option) any later version.
 
 # This program is distributed in the hope that it will be useful,
@@ -43,7 +43,7 @@ def get_mod(client: Client):
             f.write(mes2)
             f.close()
     elif req_result[0] == 403:
-        sendtelegram(2, AUTH_CHANNEL, "_", "Request Timed Out.")
+        sendtelegram(2, AUTH_CHANNEL, "_", "```Request Timed Out.```")
         mes2 = "[{}]: SSC Website has not been Updated.".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     elif req_result[0] == 200:
@@ -97,11 +97,11 @@ def getDocId(notice):
 def sendtelegram(tipe, user_id, notice, caption):
     if tipe == 1:
         handler = "Document"
-        html = "html"
+        html = "MarkdownV2"
         pramas = {"chat_id": user_id, "document": notice, "caption": caption, "parse_mode": html}
     elif tipe == 2:
         handler = "Message"
-        html = "markdown"
+        html = "markdownV2"
         pramas = {
             "chat_id": user_id,
             "text": caption,
@@ -164,7 +164,7 @@ def broadcast(req_result):
     failed_users = []
     for i in range(0, (total)):
         try:
-            pp = "[{}]:<b>Latest update from SSC website</b><code>{}</code>\n{}".format(
+            pp = "[{}]:*Latest update from SSC website* ```{}```\n{}".format(
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 req_result[1],
                 req_result[2],
