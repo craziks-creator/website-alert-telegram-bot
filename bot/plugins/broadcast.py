@@ -97,11 +97,11 @@ def getDocId(notice):
 def sendtelegram(tipe, user_id, notice, caption):
     if tipe == 1:
         handler = "Document"
-        html = "MarkdownV2"
+        html = "Markdown"
         pramas = {"chat_id": user_id, "document": notice, "caption": caption, "parse_mode": html}
     elif tipe == 2:
         handler = "Message"
-        html = "markdownV2"
+        html = "markdown"
         pramas = {
             "chat_id": user_id,
             "text": caption,
@@ -147,7 +147,7 @@ def check_status(user_id, usname):
         2,
         user_id,
         "_",
-        "||Last Check-|| [{}]\n*Last Notice:* ```{}```\n{}".format(
+        "Last Check- [{}]\n*Last Notice:* ```{}```\n{}".format(
             datetime.now().strftime(
                 "%Y-%m-%d %H:%M:%S"), req_result[1], req_result[2]
         ),
