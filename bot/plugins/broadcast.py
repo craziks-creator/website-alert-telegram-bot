@@ -146,9 +146,9 @@ def check_status(user_id, usname):
         2,
         user_id,
         "_",
-        "[SSC link](url://{})Last Check- [{}]\n*Last Notice:* ```{}</code>```".format(
-            req_result[2], datetime.now().strftime(
-                "%Y-%m-%d %H:%M:%S"), req_result[1]
+        "Last Check- [{}]\n*Last Notice:* ```{}```\n[link of notice]({})".format(
+            datetime.now().strftime(
+                "%Y-%m-%d %H:%M:%S"), req_result[1], req_result[2]
         ),
     )
     logging.info("[*] {} requested for a status update!".format(usname))
