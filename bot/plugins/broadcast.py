@@ -103,15 +103,14 @@ def sendtelegram(tipe, user_id, notice, caption):
         pramas = {"chat_id": user_id, "document": notice, "caption": caption, "parse_mode": html}
     elif tipe == 2:
         handler = "Message"
-        html = "html"
         pramas = {
             "chat_id": user_id,
             "text": caption,
-            "parse_mode": html,
+            "parse_mode": "html",
         }
     elif tipe == 3:
         handler = "Animation"
-        pramas = {"chat_id": user_id, "animation": notice, "caption": caption}
+        pramas = {"chat_id": user_id, "animation": notice, "caption": caption, "parse_mode": "html"}
     try:
         token = TG_BOT_TOKEN
         r = requests.get(
@@ -188,7 +187,7 @@ def broadcast(req_result):
             logging.error("[*] {}".format(e))
 
     time.sleep(4)
-    done = "[*] Notice Alert Sent to {}/{} people.\n {} user(s) were not sent the message.".format(
+    done = "[*] <code>Notice Alert Sent to {}/{} people.\n {} user(s) were not sent the message.</code>".format(
         (int(total - failed)), total, failed
     )
     logging.critical(done)
