@@ -70,12 +70,14 @@ def getDocId(notice):
     try:
         print("getting doc id for - " + notice)
         token = TG_BOT_TOKEN
+        html = html
         r = requests.get(
             "https://api.telegram.org/bot{}/sendDocument".format(token),
             params={
                 "chat_id": AUTH_CHANNEL,
                 "document": notice,
-                "caption": "[Logs] New Notice.",
+                "caption": "[Logs]<code> New Notice from official website of ssc.</code>",
+                "parse_mode": "html",
             },
         )
         if r.status_code == 200 and r.json()["ok"]:
@@ -191,5 +193,5 @@ def broadcast(req_result):
     )
     logging.critical(done)
     sendtelegram(
-        3, AUTH_CHANNEL, "https://telegra.ph/file/d88f31ee50c8362e86aa8.mp4", done
+        3, AUTH_CHANNEL, "https://telegra.ph/file/89f8d77a42135acd60f48.mp4", done
     )
