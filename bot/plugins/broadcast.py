@@ -70,7 +70,7 @@ def getDocId(notice):
     try:
         print("getting doc id for - " + notice)
         token = TG_BOT_TOKEN
-        html = html
+        
         r = requests.get(
             "https://api.telegram.org/bot{}/sendDocument".format(token),
             params={
