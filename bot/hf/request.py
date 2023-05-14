@@ -42,7 +42,7 @@ import json
 def request_time(client: Client):
     print("[*] Checking ssc Website for notices now....")
     try:
-        r = requests.get(('https://ssc.nic.in/Portal/LatestNews'), timeout=25)
+        r = requests.get(('https://doc.ssc.nic.in/Portal/LatestNews'), timeout=25)
     except Timeout:
         print("[{}]: The request timed out.".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
